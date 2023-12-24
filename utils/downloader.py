@@ -15,7 +15,7 @@ def download_video(video_url, output_path='vids'):
 
         return (f"Video downloaded successfully to {output_path}"), video_title
     except Exception as e:
-        return (f"An error occurred: {e}")
+        return (f"An error occurred: {e}"), None
 
 # Example usage:
 # video_url = "https://www.youtube.com/watch?v=SBzNGLKBpbo"
