@@ -1,9 +1,13 @@
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
+import json
+ 
+f = open('secrets/url.json')
+data = json.load(f)
 
 SCOPES = ['https://www.googleapis.com/auth/drive']
 SERVICE_ACCOUNT_FILE = 'secrets/service_account.json'
-PARENT_FOLDER_ID = '1JrZ51ly-huBjAEE6lKiuZXutygdUv5iN'
+PARENT_FOLDER_ID = data['url_id']
 
 def authenticate():
     creds = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
